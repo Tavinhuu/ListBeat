@@ -11,12 +11,15 @@
 		6014ED902DD4135200F4C4A4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6014ED8F2DD4135200F4C4A4 /* Color.xcassets */; };
 		6014ED942DD414B100F4C4A4 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6014ED932DD414B100F4C4A4 /* ColorUtils.swift */; };
 		602023262DD3F55A00457A01 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602023252DD3F55A00457A01 /* HomeView.swift */; };
+		604026082DD7F3E4000E95B9 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604026072DD7F3E4000E95B9 /* Main.swift */; };
+		6040260A2DD80A3F000E95B9 /* AvaliacoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604026092DD80A3F000E95B9 /* AvaliacoesViewModel.swift */; };
+		6040260C2DD80AA7000E95B9 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040260B2DD80AA7000E95B9 /* Avaliacao.swift */; };
 		6082074F2DD2B6E200ED3CE8 /* teste_apiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6082074E2DD2B6E200ED3CE8 /* teste_apiApp.swift */; };
-		608207512DD2B6E200ED3CE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608207502DD2B6E200ED3CE8 /* ContentView.swift */; };
 		608207532DD2B6E400ED3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608207522DD2B6E400ED3CE8 /* Assets.xcassets */; };
 		608207562DD2B6E400ED3CE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608207552DD2B6E400ED3CE8 /* Preview Assets.xcassets */; };
 		6082075D2DD2C60D00ED3CE8 /* Musica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6082075C2DD2C60D00ED3CE8 /* Musica.swift */; };
 		6082075F2DD2C62A00ED3CE8 /* MusicaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6082075E2DD2C62A00ED3CE8 /* MusicaViewModel.swift */; };
+		609294302DDD3EC600C81002 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6092942F2DDD3EC600C81002 /* PerfilView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,13 +27,16 @@
 		6014ED8F2DD4135200F4C4A4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		6014ED932DD414B100F4C4A4 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		602023252DD3F55A00457A01 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		604026072DD7F3E4000E95B9 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		604026092DD80A3F000E95B9 /* AvaliacoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacoesViewModel.swift; sourceTree = "<group>"; };
+		6040260B2DD80AA7000E95B9 /* Avaliacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		6082074B2DD2B6E200ED3CE8 /* teste-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6082074E2DD2B6E200ED3CE8 /* teste_apiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teste_apiApp.swift; sourceTree = "<group>"; };
-		608207502DD2B6E200ED3CE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		608207522DD2B6E400ED3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		608207552DD2B6E400ED3CE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6082075C2DD2C60D00ED3CE8 /* Musica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musica.swift; sourceTree = "<group>"; };
 		6082075E2DD2C62A00ED3CE8 /* MusicaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicaViewModel.swift; sourceTree = "<group>"; };
+		6092942F2DDD3EC600C81002 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +71,14 @@
 			isa = PBXGroup;
 			children = (
 				6082074E2DD2B6E200ED3CE8 /* teste_apiApp.swift */,
-				608207502DD2B6E200ED3CE8 /* ContentView.swift */,
 				602023252DD3F55A00457A01 /* HomeView.swift */,
+				604026072DD7F3E4000E95B9 /* Main.swift */,
+				6092942F2DDD3EC600C81002 /* PerfilView.swift */,
 				6082075C2DD2C60D00ED3CE8 /* Musica.swift */,
 				40B86F0C2DD5517B002440E2 /* AvaliacaoView.swift */,
 				6082075E2DD2C62A00ED3CE8 /* MusicaViewModel.swift */,
+				604026092DD80A3F000E95B9 /* AvaliacoesViewModel.swift */,
+				6040260B2DD80AA7000E95B9 /* Avaliacao.swift */,
 				608207522DD2B6E400ED3CE8 /* Assets.xcassets */,
 				608207542DD2B6E400ED3CE8 /* Preview Content */,
 				6014ED932DD414B100F4C4A4 /* ColorUtils.swift */,
@@ -156,9 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				608207512DD2B6E200ED3CE8 /* ContentView.swift in Sources */,
+				6040260A2DD80A3F000E95B9 /* AvaliacoesViewModel.swift in Sources */,
 				6082074F2DD2B6E200ED3CE8 /* teste_apiApp.swift in Sources */,
+				609294302DDD3EC600C81002 /* PerfilView.swift in Sources */,
+				604026082DD7F3E4000E95B9 /* Main.swift in Sources */,
 				6082075F2DD2C62A00ED3CE8 /* MusicaViewModel.swift in Sources */,
+				6040260C2DD80AA7000E95B9 /* Avaliacao.swift in Sources */,
 				6014ED942DD414B100F4C4A4 /* ColorUtils.swift in Sources */,
 				602023262DD3F55A00457A01 /* HomeView.swift in Sources */,
 				40B86F0D2DD5517B002440E2 /* AvaliacaoView.swift in Sources */,
@@ -296,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"teste-api/Preview Content\"";
+				DEVELOPMENT_TEAM = S9HDC74559;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -324,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"teste-api/Preview Content\"";
+				DEVELOPMENT_TEAM = S9HDC74559;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

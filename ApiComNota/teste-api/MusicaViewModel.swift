@@ -4,7 +4,7 @@ class MusicaViewModel: ObservableObject {
     @Published var musica: Musica?
 
     func buscarMusicaAleatoria() {
-        guard let url = URL(string: "http://192.168.128.90:1880/leitura") else { return }
+        guard let url = URL(string: "http://192.168.128.100:1880/leitura") else { return }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -23,7 +23,7 @@ class MusicaViewModel: ObservableObject {
     }
 
     func salvarAvaliacao(musica: Musica) {
-        guard let url = URL(string: "http://192.168.128.90:1880/atualizarUCB") else { return }
+        guard let url = URL(string: "http://192.168.128.81:1880/atualizar") else { return }
 
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"

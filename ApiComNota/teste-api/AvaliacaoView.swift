@@ -3,106 +3,154 @@ import SwiftUI
 struct AvaliacaoView: View {
     @State var musica: Musica
     @ObservedObject var viewModel: MusicaViewModel
-
+    
     @State private var rating: Int = 0
     @State private var comentario: String = ""
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Color.black.ignoresSafeArea()
-
-                VStack(spacing: 0) {
-                    // Imagem no topo
-                    AsyncImage(url: URL(string: musica.foto)) { phase in
+        ZStack {
+            Color.black.ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                // Imagem de fundo borrada
+                AsyncImage(url: URL(string: musica.foto)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .blur(radius: 10)
+                            .opacity(0.6)
+                    } else {
+                        Color.gray.opacity(0.6)
+                    }
+                }
+                .frame(height: 150)
+                .ignoresSafeArea(edges: .top)
+                
+                // Gradiente escurecendo o fundo
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.black.opacity(0),
+                        Color.black.opacity(1)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 200)
+                
+                // Logo e título
+                VStack(spacing: 12) {
+                    AsyncImage(url: URL(string: "https://i.ibb.co/G4WF943x/Logo-Letring.png")) { phase in
                         if let image = phase.image {
                             image
                                 .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.33)
-                                .clipped()
-                                .blur(radius: 5)
-                                .overlay(Color.black.opacity(0.4))
-                        } else {
-                            Color.gray
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.33)
+                                .scaledToFit()
+                                .frame(width: 150, height: 40)
+                                .offset(y: -230)
                         }
                     }
-
-                    // Conteúdo principal
-                    VStack(spacing: 20) {
-                        Text("Curtiu?")
-                            .font(.system(size: 32, weight: .bold))
-                            .foregroundColor(.yellow)
-                            .padding(.top, -60)
-                            .padding(.bottom, 10)
-
-                        Text("Qual sua nota?")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-
-                        // Estrelas de avaliação
-                        HStack {
-                            ForEach(1...5, id: \.self) { star in
-                                Image(systemName: star <= rating ? "star.fill" : "star")
-                                    .foregroundColor(.yellow)
-                                    .font(.system(size: 30))
-                                    .onTapGesture {
-                                        rating = star
-                                    }
-                            }
-                        }
-
-                        // Campo de comentário
-                        HStack(alignment: .top) {
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.gray)
-
-                            ZStack(alignment: .topLeading) {
-                                if comentario.isEmpty {
-                                    Text("Adicione um comentário...")
-                                        .foregroundColor(.gray)
-                                        .padding(12)
+                }
+                
+                Rectangle()
+                    .fill(.black)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                // Conteúdo principal
+                VStack(spacing: 20) {
+                    Text("Qual sua nota?")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 20))
+                    
+                    // Estrelas
+                    HStack {
+                        ForEach(1...5, id: \.self) { star in
+                            Image(systemName: "star.fill") // sempre preenchida
+                                .foregroundColor(star <= rating ? .yellow : .gray.opacity(0.4)) // amarelo se selecionada, cinza com opacidade caso contrário
+                                .font(.system(size: 25))
+                                .onTapGesture {
+                                    rating = star
                                 }
-
-                                TextEditor(text: $comentario)
-                                    .foregroundColor(.white)
-                                    .padding(8)
-                                    .background(Color.black.opacity(0.8))
-                                    .cornerRadius(10)
-                            }
-                            .frame(height: 100)
                         }
+                    }
+                    
+                    // Campo de comentário (com placeholder)
+                    HStack {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.gray.opacity(0.4))
+                        ZStack {
+                            Color.gray.opacity(0.2)
+                                .cornerRadius(10)
+                            
+                            TextField("Deixe seu comentário aqui", text: $comentario)
+                                .foregroundColor(.white) // Texto branco
+                                .padding(8)
+                                .background(Color.clear) // Fundo transparente no TextField
+                                .cornerRadius(10)
+                        }
+                        .frame(height: 40)
                         .padding(.horizontal)
-
-                        // Botão de avaliação
+                    }
+                    .padding(.top, 60)
+                    .padding(.horizontal, 20)
+                    
+                    // Substituindo o botão Avaliar por uma imagem
+                    if let logoImage = UIImage(named: "beatbutton") {
                         Button(action: {
-                            guard rating > 0 else { return } // Evita salvar sem nota
-
+                            guard rating > 0 else { return }
+                                
                             musica.avaliacao = rating
                             musica.comentario = comentario
                             viewModel.salvarAvaliacao(musica: musica)
-                            dismiss() // Volta para a tela anterior
+                            dismiss()
                         }) {
-                            Text("AVALIAR")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(rating > 0 ? Color.yellow : Color.gray)
-                                .foregroundColor(.black)
-                                .cornerRadius(12)
-                                .font(.headline)
+                            Image(uiImage: logoImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 150, height: 150) // Ajuste o tamanho conforme necessário
+                                .padding(.top, 40)
                         }
-                        .padding(.horizontal, 40)
-                        .padding(.top, 10)
                         .disabled(rating == 0)
-
-                        Spacer()
                     }
+                    
+                    Spacer()
+                    
+                    // Botão de Cancelar
+                    Button(action: {
+                        dismiss() // Fecha a tela e volta para a anterior
+                    }) {
+                        Text("Cancelar")
+                            .font(.system(size: 10))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                          
+                         
+                            .padding(.horizontal, 20)
+                    }
+                    .padding(.bottom, 30) // Espaçamento inferior
                 }
+                .offset(y: -20) // <--- aqui ajustei de 40 para 10
             }
         }
     }
+}
+
+#Preview {
+    AvaliacaoView(
+        musica: Musica(
+            _id: "1",
+            nome: "Fake Plastic Trees",
+            foto: "https://i.scdn.co/image/ab67616d0000b2732172b607853fa89cefa2beb4",
+            artista: "Radiohead",
+            ano: "1995",
+            linkspotify: "www.com",
+            linkapple: "sasad",
+            linkdeezer: "sdfdsf"
+        ),
+        viewModel: MusicaViewModel()
+    )
 }
