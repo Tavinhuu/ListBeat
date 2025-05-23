@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039BF97B2DDFE85B009884D4 /* ANIMAÇÃO LISTBEAT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 039BF97A2DDFE85B009884D4 /* ANIMAÇÃO LISTBEAT.mp4 */; };
 		40B86F0D2DD5517B002440E2 /* AvaliacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B86F0C2DD5517B002440E2 /* AvaliacaoView.swift */; };
 		6014ED902DD4135200F4C4A4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6014ED8F2DD4135200F4C4A4 /* Color.xcassets */; };
 		6014ED942DD414B100F4C4A4 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6014ED932DD414B100F4C4A4 /* ColorUtils.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		039BF97A2DDFE85B009884D4 /* ANIMAÇÃO LISTBEAT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ANIMAÇÃO LISTBEAT.mp4"; sourceTree = "<group>"; };
 		40B86F0C2DD5517B002440E2 /* AvaliacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoView.swift; sourceTree = "<group>"; };
 		6014ED8F2DD4135200F4C4A4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		6014ED932DD414B100F4C4A4 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
@@ -33,7 +35,6 @@
 		604026092DD80A3F000E95B9 /* AvaliacoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacoesViewModel.swift; sourceTree = "<group>"; };
 		6040260B2DD80AA7000E95B9 /* Avaliacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		605765C72DDEA51E00967516 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
-		605765C92DDEAB4100967516 /* ANIMAÇÃO LISTBEAT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ANIMAÇÃO LISTBEAT.mp4"; path = "../../../Downloads/ANIMAÇÃO LISTBEAT/ANIMAÇÃO LISTBEAT.mp4"; sourceTree = "<group>"; };
 		6082074B2DD2B6E200ED3CE8 /* teste-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teste-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6082074E2DD2B6E200ED3CE8 /* teste_apiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teste_apiApp.swift; sourceTree = "<group>"; };
 		608207522DD2B6E400ED3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				6014ED8F2DD4135200F4C4A4 /* Color.xcassets */,
+				039BF97A2DDFE85B009884D4 /* ANIMAÇÃO LISTBEAT.mp4 */,
 				6082074D2DD2B6E200ED3CE8 /* teste-api */,
 				6082074C2DD2B6E200ED3CE8 /* Products */,
 			);
@@ -75,7 +77,6 @@
 		6082074D2DD2B6E200ED3CE8 /* teste-api */ = {
 			isa = PBXGroup;
 			children = (
-				605765C92DDEAB4100967516 /* ANIMAÇÃO LISTBEAT.mp4 */,
 				6082074E2DD2B6E200ED3CE8 /* teste_apiApp.swift */,
 				602023252DD3F55A00457A01 /* HomeView.swift */,
 				604026072DD7F3E4000E95B9 /* Main.swift */,
@@ -161,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				608207562DD2B6E400ED3CE8 /* Preview Assets.xcassets in Resources */,
+				039BF97B2DDFE85B009884D4 /* ANIMAÇÃO LISTBEAT.mp4 in Resources */,
 				608207532DD2B6E400ED3CE8 /* Assets.xcassets in Resources */,
 				6014ED902DD4135200F4C4A4 /* Color.xcassets in Resources */,
 			);

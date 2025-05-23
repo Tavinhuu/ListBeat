@@ -13,7 +13,7 @@ class AvaliacoesViewModel: ObservableObject {
             let avaliacoesParaRemover = offsets.map { avaliacoes[$0] }
 
             for avaliacao in avaliacoesParaRemover {
-                guard let url = URL(string: "http://192.168.128.100:1880/remover") else { continue }
+                guard let url = URL(string: "http://192.168.128.90:1880/remover") else { continue }
                 var request = URLRequest(url: url)
                 request.httpMethod = "DELETE"
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -41,7 +41,7 @@ class AvaliacoesViewModel: ObservableObject {
         }
     
     func fetchAvaliacoes() {
-        guard let url = URL(string: "http://192.168.128.81:1880/leitura") else {
+        guard let url = URL(string: "http://192.168.128.100:1880/leitura") else {
             errorMessage = "URL inválida"
             return
         }

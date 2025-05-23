@@ -19,10 +19,16 @@ struct ContentView: View {
                 Color.black.ignoresSafeArea()
                 
                 if isLoading {
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                        .transition(.opacity)
+                    VideoPlayer(player: player)
+                        .ignoresSafeArea()
+                        .onAppear {
+                            if let url = Bundle.main.url(forResource: "ANIMAÇÃO LISTBEAT", withExtension: "mp4") {
+                                player.replaceCurrentItem(with: AVPlayerItem(url: url))
+                                player.isMuted = true
+                                player.play()
+                            }
+                        }
+                        .frame(height: 200)
                 } else {
                     if let musica = viewModel.musica {
                         VStack(spacing: 0) {
@@ -77,14 +83,15 @@ struct ContentView: View {
                                 image
                                     .resizable()
                                     .scaledToFill()
+                                    .cornerRadius(15) 
                                     .opacity(showFotoMusica ? 1 : 0)
                                     .offset(y: showFotoMusica ? -200 : -220)
                                     .animation(.easeOut(duration: 0.8), value: showFotoMusica)
-                                
                             }
                         }
                         .frame(width: 160, height: 160)
                         .zIndex(1)
+
                         
                         VStack {
                             Text(musica.nome)
